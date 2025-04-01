@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer components {
+  .grid-option {
+    @apply rounded-md p-5 h-full col-span-1 hover:opacity-75 border-white
+    border-2 hover:border-[var(--color-walmart)]
+  }
+}
+
+:root {
+  --color-walmart: #0171DC; /* Define the custom color */
+}
