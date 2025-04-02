@@ -5,6 +5,7 @@ Overview
 A Walmart Clone that scrapes real Walmart product data to display authentic product information directly from Walmart's platform.
 
 Tech Stack:
+
 Next.js 15 for server-side rendering and routing
 
 ReactJS for building interactive UIs
