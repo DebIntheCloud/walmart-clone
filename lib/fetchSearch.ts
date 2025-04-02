@@ -23,7 +23,7 @@ function fetchSearch(searchTerm: string) { //Defines a function named fetchSearc
                 "Basic " + Buffer.from(`${username}:${password}`).toString("base64"), //This is required to prove access to the API.
         },
         next: {
-            revalidate: 60 * 60,
+            revalidate: 60 * 60 * 24, // refresh the cache every hour every 1 day. ISR
         } 
     })
 

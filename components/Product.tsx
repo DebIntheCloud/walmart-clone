@@ -44,6 +44,10 @@ function Product({ product }: { product: Organic }) {
     const title = product?.general?.title ?? "Product";
     const image = product?.general?.image ?? ""; // Assuming you want to render an image
     const url = product?.general?.url ?? "";  // Use the URL for the link
+
+    const currency = product?.price?.currency ?? "";
+    const priceValue = product?.price?.price ?? "N/A";
+    const priceSymbol = currency === "USD" ? "$" : currency;
   
     return (
       <Link
@@ -52,11 +56,17 @@ function Product({ product }: { product: Organic }) {
           query: { url: product.url },
         }}
 
-        className="flex flex-col relative border rounded-md h-full p-5"
+        className="flex flex-col relative rounded-md h-full p-5"
       >
-        <div className="product-item text-xl font-bold">
-          <img src={image} width={200} height={200} className="mx-auto" />
-          {product.price?.currency} {product.price.price}
+        <div className="product-item text-md">
+          <img src={image} width={250} height={250} className="mx-auto" />
+
+
+          <p className="font-bold text-lg">
+          {priceSymbol} {priceValue}
+        </p>
+
+ 
           <p>{title}</p> {/* You can render other product details here */}
 
           {product.badge && (
@@ -65,8 +75,10 @@ function Product({ product }: { product: Organic }) {
 
           <p className="font-light">{product.title}</p>
 
+          <p className="text-yellow-500">
           {product.rating.rating}✰
           <span className="text-gray-400 ml-2">({product.rating.count})</span>
+          </p>
           </div>
       </Link>
     );

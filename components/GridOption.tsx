@@ -24,7 +24,7 @@ function GridOption({title, className, image}: Props ) {
                 src={image}
                 alt={title}
                 layout="fill"
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
                 className="object-cover opacity-20 rounded-md"
             />
         )}  
